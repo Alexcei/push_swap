@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/bpole/CLionProjects/push_swap/commands.c
+push_swap.h
+/Users/bpole/CLionProjects/push_swap/push_swap.h
+
 /Users/bpole/CLionProjects/push_swap/ft_printf/ft_printf.h
 stdarg.h
 -

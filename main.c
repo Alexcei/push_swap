@@ -20,7 +20,7 @@ int 	check_double(t_stacks stack)
 	return (0);
 }
 
-int		ft_atoi_swap(const char *str)
+int		ft_atoi_swap(const char *str, t_stacks *stacks)
 {
 	size_t		i;
 	int			sing;
@@ -38,19 +38,19 @@ int		ft_atoi_swap(const char *str)
 		res = res * 10 + str[i++] - '0';
 		if (res > (res * 10) || (res > 2147483647 && sing == 1) || (res > 2147483648 && sing == -1))
 		{
-			write(1, "Error\n", 6);
+			stacks->flag_c ? ft_printf(RED"Error\n"RESET) : ft_printf("Error\n");
 			exit(1);
 		}
 	}
 	if (str[i] || (i && (str[i - 1] == '-' || str[i - 1] == '+')))
 	{
-		write(1, "Error\n", 6);
+		stacks->flag_c ? ft_printf(RED"Error\n"RESET) : ft_printf("Error\n");
 		exit(1);
 	}
 	return (res * sing);
 }
 
-int     *creat_stack_a(int *ac, char **av)
+int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
 {
     int     *stack_a;
     char 	**arr;
@@ -58,7 +58,7 @@ int     *creat_stack_a(int *ac, char **av)
     int     i;
     int 	j;
 
-    i = 1;
+    i = 0;
     n = 0;
     while (av[i])
 	{
@@ -70,14 +70,14 @@ int     *creat_stack_a(int *ac, char **av)
     }
     *ac = n;
 	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
-	i = 1;
+	i = 0;
 	n = 0;
 	while (av[i])
 	{
 		arr = ft_strsplit(av[i], ' ');
 		j = 0;
 		while (arr[j])
-			stack_a[n++] = ft_atoi_swap(arr[j++]);
+			stack_a[n++] = ft_atoi_swap(arr[j++], stacks);
 		i++;
 	}
     return (stack_a);
@@ -85,34 +85,40 @@ int     *creat_stack_a(int *ac, char **av)
 
 void    creat_stacks(t_stacks *stacks, int ac, char **av)
 {
-    stacks->stack_a = creat_stack_a(&ac, av);
+    stacks->stack_a = creat_stack_a(&ac, av, stacks);
     stacks->stack_b = (int*)ft_memalloc(sizeof(int*) * ac);
     stacks->count_a = ac;
 	if (check_double(*stacks))
 	{
-		write(1, "Error\n", 6);
+		stacks->flag_c ? ft_printf(RED"Error\n"RESET) :
+		ft_printf("Error\n");
 		exit(1);
 	}
 }
 
 void	ft_print_stacks(t_stacks stacks)
 {
+	stacks.flag_c ? ft_printf(YEL"STACK A %d elem - "RESET, stacks.count_a) :
 	ft_printf("STACK A %d elem - ", stacks.count_a);
 	if (!stacks.count_a)
-		ft_printf("empty");
+		stacks.flag_c ? ft_printf(YEL"empty"RESET) :ft_printf("empty");
 	else
 	{
 		while (stacks.count_a--)
+			stacks.flag_c ? ft_printf(YEL"%d "RESET, *stacks.stack_a++) :
 			ft_printf("%d ", *stacks.stack_a++);
 	}
 	ft_printf("\n");
 
+	stacks.flag_c ? ft_printf(BLU"STACK B %d elem - "RESET, stacks.count_b) :
 	ft_printf("STACK B %d elem - ", stacks.count_b);
 	if (!stacks.count_b)
+		stacks.flag_c ? ft_printf(BLU"empty"RESET) :
 		ft_printf("empty");
 	else
 	{
 		while (stacks.count_b--)
+			stacks.flag_c ? ft_printf(BLU"%d "RESET, *stacks.stack_b++) :
 			ft_printf("%d ", *stacks.stack_b++);
 	}
 	ft_printf("\n");
@@ -174,7 +180,7 @@ void		apply_command(t_stacks *stacks, char *line)
 	}
 	else
 	{
-		write(1, "Error\n", 6);
+		stacks->flag_c ? ft_printf(RED"Error\n"RESET) : ft_printf("Error\n");
 		exit(1);
 	}
 }
@@ -185,29 +191,50 @@ int		next_command(t_stacks *stacks)
 
 	while (get_next_line(0, &line) > 0)
 	{
-		//ft_printf("<%s>\n", line);
+		if (stacks->flag_v)
+			stacks->flag_c ? ft_printf(MAG"Last operation %s\n"RESET, line)
+			: ft_printf("Last operation %s\n", line);;
 		apply_command(stacks, line);
-		//ft_print_stacks(*stacks);
+		if (stacks->flag_v)
+			ft_print_stacks(*stacks);
 	}
 	if (check_solve(*stacks))
 		return (1);
 	return (0);
 }
 
+void	pars_flag(char ***av, t_stacks *stacks)
+{
+
+	if (ft_strequ(**av, "-v"))
+	{
+		stacks->flag_v = 1;
+		(*av)++;
+		pars_flag(av, stacks);
+	}
+	if (ft_strequ(**av, "-c"))
+	{
+		stacks->flag_c = 1;
+		(*av)++;
+		pars_flag(av, stacks);
+	}
+}
+
 int     main(int ac, char **av)
 {
-    t_stacks     stacks;
+    t_stacks	stacks;
 
+	av++;
+	ft_bzero(&stacks, sizeof(t_stacks));
+	pars_flag(&av, &stacks);
     if (ac == 1)
         return (0);
-    ft_bzero(&stacks, sizeof(t_stacks));
     creat_stacks(&stacks, ac - 1, av);
-
-    //ft_print_stacks(stacks);
-
+    if (stacks.flag_v)
+    	ft_print_stacks(stacks);
 	if (next_command(&stacks))
-		write(1, "OK\n", 3);
+		stacks.flag_c ? ft_printf(GRN"OK\n"RESET) : ft_printf("OK\n");
 	else
-		write(1, "KO\n", 3);
+		stacks.flag_c ? ft_printf(RED"KO\n"RESET) : ft_printf("KO\n");
     return 0;
 }
