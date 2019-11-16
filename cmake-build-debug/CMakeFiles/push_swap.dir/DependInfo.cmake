@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/bpole/CLionProjects/push_swap/commands.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/commands.c.o"
   "/Users/bpole/CLionProjects/push_swap/ft_printf/bonus_wildcard.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/bonus_wildcard.c.o"
   "/Users/bpole/CLionProjects/push_swap/ft_printf/ft_fprintf.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/ft_fprintf.c.o"
   "/Users/bpole/CLionProjects/push_swap/ft_printf/ft_printf.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/ft_printf.c.o"

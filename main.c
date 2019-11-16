@@ -1,33 +1,98 @@
-#include "ft_printf/ft_printf.h"
+#include "push_swap.h"
 
-typedef struct      s_stacks
+int 	check_double(t_stacks stack)
 {
-    int             *stack_a;
-    int             *stack_b;
-    int             count_a;
-    int             count_b;
-}                   t_stacks;
+	int 	i;
+	int 	j;
 
-int     *creat_stack_a(int ac, char **av)
+	i = 0;
+	while (i < stack.count_a)
+	{
+		j = i + 1;
+		while (j < stack.count_a)
+		{
+			if (stack.stack_a[i] == stack.stack_a[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int		ft_atoi_swap(const char *str)
+{
+	size_t		i;
+	int			sing;
+	long long	res;
+
+	i = 0;
+	res = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	sing = (str[i] == '-' ? -1 : 1);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		res = res * 10 + str[i++] - '0';
+		if (res > (res * 10) || (res > 2147483647 && sing == 1) || (res > 2147483648 && sing == -1))
+		{
+			write(1, "Error\n", 6);
+			exit(1);
+		}
+	}
+	if (str[i] || (i && (str[i - 1] == '-' || str[i - 1] == '+')))
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
+	return (res * sing);
+}
+
+int     *creat_stack_a(int *ac, char **av)
 {
     int     *stack_a;
+    char 	**arr;
+    int 	n;
     int     i;
+    int 	j;
 
     i = 1;
-    stack_a = (int*)ft_memalloc(sizeof(int*) * ac);
+    n = 0;
     while (av[i])
-    {
-        stack_a[i - 1] = ft_atoi(av[i]);
+	{
+		arr = ft_strsplit(av[i], ' ');
+		j = 0;
+		while (arr[j++])
+			n++;
         i++;
     }
+    *ac = n;
+	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
+	i = 1;
+	n = 0;
+	while (av[i])
+	{
+		arr = ft_strsplit(av[i], ' ');
+		j = 0;
+		while (arr[j])
+			stack_a[n++] = ft_atoi_swap(arr[j++]);
+		i++;
+	}
     return (stack_a);
 }
 
 void    creat_stacks(t_stacks *stacks, int ac, char **av)
 {
-    stacks->stack_a = creat_stack_a(ac, av);
+    stacks->stack_a = creat_stack_a(&ac, av);
     stacks->stack_b = (int*)ft_memalloc(sizeof(int*) * ac);
     stacks->count_a = ac;
+	if (check_double(*stacks))
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
 }
 
 void	ft_print_stacks(t_stacks stacks)
@@ -74,114 +139,7 @@ int 	check_solve(t_stacks stacks)
 	return (1);
 }
 
-void	swap(int *a, int *b)
-{
-	int 	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void	ft_do_sa(t_stacks *stacks)
-{
-	swap(&stacks->stack_a[0], &stacks->stack_a[1]);
-}
-
-void	ft_do_sb(t_stacks *stacks)
-{
-	swap(&stacks->stack_b[0], &stacks->stack_b[1]);
-}
-
-void	ft_do_rra(t_stacks *stacks)
-{
-	int		tmp;
-	int 	i;
-
-	tmp = stacks->stack_a[stacks->count_a - 1];
-	i = stacks->count_a + 1;
-	while (--i > 0)
-		stacks->stack_a[i] = stacks->stack_a[i - 1];
-	stacks->stack_a[0] = tmp;
-}
-
-void	ft_do_ra(t_stacks *stacks)
-{
-	int		tmp;
-	int 	i;
-
-	tmp = stacks->stack_a[0];
-	i = 0;
-	while (++i <= stacks->count_a)
-		stacks->stack_a[i - 1] = stacks->stack_a[i];
-	stacks->stack_a[stacks->count_a - 1] = tmp;
-}
-
-void	ft_do_rrb(t_stacks *stacks)
-{
-	int		tmp;
-	int 	i;
-
-	tmp = stacks->stack_b[stacks->count_b - 1];
-	i = stacks->count_b + 1;
-	while (--i > 0)
-		stacks->stack_b[i] = stacks->stack_b[i - 1];
-	stacks->stack_b[0] = tmp;
-}
-
-void	ft_do_rb(t_stacks *stacks)
-{
-	int		tmp;
-	int 	i;
-
-	tmp = stacks->stack_b[0];
-	i = 0;
-	while (++i <= stacks->count_b)
-		stacks->stack_b[i - 1] = stacks->stack_b[i];
-	stacks->stack_b[stacks->count_b - 1] = tmp;
-}
-
-void	ft_do_pb(t_stacks *stacks)
-{
-	int 	i;
-
-	if (!stacks->count_a)
-		return ;
-
-	i = stacks->count_b + 1;
-	while (--i > 0)
-		stacks->stack_b[i] = stacks->stack_b[i - 1];
-	swap(&stacks->stack_a[0], &stacks->stack_b[0]);
-	stacks->count_b++;
-
-	i = 0;
-	while (++i <= stacks->count_a)
-		stacks->stack_a[i - 1] = stacks->stack_a[i];
-	stacks->count_a--;
-
-}
-
-void	ft_do_pa(t_stacks *stacks)
-{
-	int 	i;
-
-	if (!stacks->count_b)
-		return ;
-
-	i = stacks->count_a + 1;
-	while (--i > 0)
-		stacks->stack_a[i] = stacks->stack_a[i - 1];
-	swap(&stacks->stack_b[0], &stacks->stack_a[0]);
-	stacks->count_a++;
-
-	i = 0;
-	while (++i <= stacks->count_b)
-		stacks->stack_b[i - 1] = stacks->stack_b[i];
-	stacks->count_b--;
-
-}
-
-void	apply_command(t_stacks *stacks, char *line)
+void		apply_command(t_stacks *stacks, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_do_sa(stacks);
@@ -214,19 +172,22 @@ void	apply_command(t_stacks *stacks, char *line)
 		ft_do_rra(stacks);
 		ft_do_rrb(stacks);
 	}
+	else
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
 }
 
 int		next_command(t_stacks *stacks)
 {
 	char *line;
 
-	if (check_solve(*stacks))
-		return (1);
 	while (get_next_line(0, &line) > 0)
 	{
-		ft_printf("<%s>\n", line);
+		//ft_printf("<%s>\n", line);
 		apply_command(stacks, line);
-		ft_print_stacks(*stacks);
+		//ft_print_stacks(*stacks);
 	}
 	if (check_solve(*stacks))
 		return (1);
@@ -242,11 +203,11 @@ int     main(int ac, char **av)
     ft_bzero(&stacks, sizeof(t_stacks));
     creat_stacks(&stacks, ac - 1, av);
 
-    ft_print_stacks(stacks);
+    //ft_print_stacks(stacks);
 
 	if (next_command(&stacks))
 		write(1, "OK\n", 3);
 	else
-		write(1, "Error\n", 6);
+		write(1, "KO\n", 3);
     return 0;
 }

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/push_swap.dir/commands.c.o"
   "CMakeFiles/push_swap.dir/ft_printf/bonus_wildcard.c.o"
   "CMakeFiles/push_swap.dir/ft_printf/ft_fprintf.c.o"
   "CMakeFiles/push_swap.dir/ft_printf/ft_printf.c.o"

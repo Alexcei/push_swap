@@ -123,6 +123,33 @@ push_swap/fast:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/build
 .PHONY : push_swap/fast
 
+commands.o: commands.c.o
+
+.PHONY : commands.o
+
+# target to build an object file
+commands.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/commands.c.o
+.PHONY : commands.c.o
+
+commands.i: commands.c.i
+
+.PHONY : commands.i
+
+# target to preprocess a source file
+commands.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/commands.c.i
+.PHONY : commands.c.i
+
+commands.s: commands.c.s
+
+.PHONY : commands.s
+
+# target to generate assembly for a file
+commands.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/commands.c.s
+.PHONY : commands.c.s
+
 ft_printf/bonus_wildcard.o: ft_printf/bonus_wildcard.c.o
 
 .PHONY : ft_printf/bonus_wildcard.o
@@ -2211,6 +2238,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... push_swap"
+	@echo "... commands.o"
+	@echo "... commands.i"
+	@echo "... commands.s"
 	@echo "... ft_printf/bonus_wildcard.o"
 	@echo "... ft_printf/bonus_wildcard.i"
 	@echo "... ft_printf/bonus_wildcard.s"

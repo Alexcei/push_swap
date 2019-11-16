@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/bpole/CLionProjects/push_swap/commands.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/ft_printf/bonus_wildcard.c">
 			<Option target="push_swap"/>
 		</Unit>
@@ -315,6 +318,9 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/main.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/bpole/CLionProjects/push_swap/push_swap.h">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/CMakeLists.txt">

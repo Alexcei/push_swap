@@ -15,7 +15,7 @@ NAME = checker
 LIB_DIR = ./ft_printf/
 LIBFT = $(LIB_DIR)libftprintf.a
 
-SRC = ./main.c
+SRC = ./main.c ./commands.c
 
 OBJ = $(SRC:.c=.o)
 
