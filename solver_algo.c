@@ -29,26 +29,89 @@ void	separate(t_stacks *stacks)
 		}
 	}
 }
+/*
+void 	optimal(t_stacks *stacks)
+{
+	int 	b;
+	int 	next;
+	int 	up;
+	//int 	back;
+	int 	arr[stacks->count_b];
 
+	next = 0;
+	while (next < stacks->count_b)
+	{
+		up = 0;
+		b = stacks->stack_b[next];
+		while (42)
+		{
+			if (!up && stacks->stack_a[0] != stacks->min && b > stacks->stack_a[stacks->count_a - 1] &&
+				b < stacks->stack_a[0])
+				break;
+			else if (up && stacks->stack_a[up] != stacks->min && b > stacks->stack_a[up - 1] && b < stacks->stack_a[up])
+				break;
+			up++;
+		}
+		arr[next] = up;
+		next++;
+	}
+	stacks->next = next;
+	stacks->up = up;
+	next = 0;
+	while (next < stacks->count_b)
+	{
+		if (arr[next] + next < stacks->up)
+		{
+			stacks->next = next;
+			stacks->up = arr[next];
+		}
+		next++;
+	}
+	ft_printf("%d %d %d\n", stacks->next, stacks->up, arr[next]);
+	//stacks->back = stacks->count_a - up;
+}
+ 	optimal(stacks);
+	next = stacks->next;
+	up = stacks->up;
+ 	back = stacks->back;
+*/
 void	drum_sort(t_stacks *stacks)
 {
-	int		i;
+	//int 	next;
 	int 	b;
+	int		up;
 	int 	back;
 
-	i = 0;
+
+
+
+	up = 0;
 	b = stacks->stack_b[0];
 	while (42)
 	{
-		if (!i && stacks->stack_a[0] != stacks->min && b > stacks->stack_a[stacks->count_a - 1] && b < stacks->stack_a[0])
+		if (!up && stacks->stack_a[0] != stacks->min && b > stacks->stack_a[stacks->count_a - 1] && b < stacks->stack_a[0])
 			break ;
-		else if (i && stacks->stack_a[i] != stacks->min && b > stacks->stack_a[i - 1] && b < stacks->stack_a[i])
+		else if (up && stacks->stack_a[up] != stacks->min && b > stacks->stack_a[up - 1] && b < stacks->stack_a[up])
 			break ;
-		i++;
+		up++;
 	}
-	back = stacks->count_a - i;
-	//ft_printf("%d %d\n", i, back);
-	if (i > back)
+	back = stacks->count_a - up;
+
+	if (up > 12 && back > 12)
+	{
+		ft_do_ra(stacks);
+		ft_do_rb(stacks);
+		stacks->flag_c ? ft_printf(CYN"rr\n"RESET) : ft_printf("rr\n");
+		return ;
+	}
+
+/*
+	while (next--)
+	{
+		ft_do_rb(stacks);
+		stacks->flag_c ? ft_printf(CYN"rb\n"RESET) : ft_printf("rb\n");
+	}*/
+	if (up > back)
 	{
 		while (back--)
 		{
@@ -58,7 +121,7 @@ void	drum_sort(t_stacks *stacks)
 	}
 	else
 	{
-		while (i--)
+		while (up--)
 		{
 			ft_do_ra(stacks);
 			stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/bpole/CLionProjects/push_swap/commands.c
+push_swap.h
+/Users/bpole/CLionProjects/push_swap/push_swap.h
+
 /Users/bpole/CLionProjects/push_swap/ft_printf/ft_printf.h
 stdarg.h
 -
@@ -22,11 +26,19 @@ unistd.h
 fcntl.h
 /Users/bpole/CLionProjects/push_swap/ft_printf/libft/fcntl.h
 
+/Users/bpole/CLionProjects/push_swap/push_swap.c
+push_swap.h
+/Users/bpole/CLionProjects/push_swap/push_swap.h
+
 /Users/bpole/CLionProjects/push_swap/push_swap.h
 ft_printf/ft_printf.h
 /Users/bpole/CLionProjects/push_swap/ft_printf/ft_printf.h
 
 /Users/bpole/CLionProjects/push_swap/solver_algo.c
+push_swap.h
+/Users/bpole/CLionProjects/push_swap/push_swap.h
+
+/Users/bpole/CLionProjects/push_swap/util.c
 push_swap.h
 /Users/bpole/CLionProjects/push_swap/push_swap.h
 

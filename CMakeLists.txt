@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(push_swap C)
 
 file(GLOB FILES
+        "util.c"
         "push_swap.h"
         "push_swap.c"
         "commands.c"

@@ -55,6 +55,41 @@ int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
 	int     *stack_a;
 	char 	**arr;
 	int 	n;
+	int     i;
+	int 	j;
+
+	i = 0;
+	n = 0;
+	while (av[i])
+	{
+		arr = ft_strsplit(av[i], ' ');
+		j = 0;
+		while (arr[j++])
+			n++;
+		i++;
+		ft_free_arr(arr);
+	}
+	*ac = n;
+	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
+	i = 0;
+	n = 0;
+	while (av[i])
+	{
+		arr = ft_strsplit(av[i], ' ');
+		j = 0;
+		while (arr[j])
+			stack_a[n++] = ft_atoi_swap(arr[j++], stacks);
+		i++;
+		ft_free_arr(arr);
+	}
+	return (stack_a);
+}
+/*
+int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
+{
+	int     *stack_a;
+	char 	**arr;
+	int 	n;
 
 	n = 0;
 	arr = ft_strsplit(av[0], ' ');
@@ -67,7 +102,7 @@ int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
 		stack_a[n] = ft_atoi_swap(arr[n], stacks);
 	return (stack_a);
 }
-
+*/
 void    creat_stacks(t_stacks *stacks, int ac, char **av)
 {
 	stacks->stack_a = creat_stack_a(&ac, av, stacks);
@@ -253,6 +288,12 @@ void	solver(t_stacks stacks)
 		solver_algo(stacks);
 }
 
+void	free_all(t_stacks *stacks)
+{
+	free(stacks->stack_a);
+	free(stacks->stack_b);
+}
+
 int     main(int ac, char **av)
 {
 	t_stacks	stacks;
@@ -267,5 +308,6 @@ int     main(int ac, char **av)
 	if (stacks.flag_v)
 		ft_print_stacks(stacks);
 	solver(stacks);
+	free_all(&stacks);
 	return 0;
 }

@@ -16,8 +16,8 @@ NAME_P = push_swap
 LIB_DIR = ./ft_printf/
 LIBFT = $(LIB_DIR)libftprintf.a
 
-SRC_C = ./checker.c ./commands.c
-SRC_P = ./push_swap.c ./commands.c ./solver_algo.c
+SRC_C = ./checker.c ./commands.c ./util.c
+SRC_P = ./push_swap.c ./commands.c ./solver_algo.c ./util.c
 
 OBJ_C = $(SRC_C:.c=.o)
 OBJ_P = $(SRC_P:.c=.o)

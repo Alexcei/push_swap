@@ -2256,6 +2256,33 @@ solver_algo.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/solver_algo.c.s
 .PHONY : solver_algo.c.s
 
+util.o: util.c.o
+
+.PHONY : util.o
+
+# target to build an object file
+util.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/util.c.o
+.PHONY : util.c.o
+
+util.i: util.c.i
+
+.PHONY : util.i
+
+# target to preprocess a source file
+util.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/util.c.i
+.PHONY : util.c.i
+
+util.s: util.c.s
+
+.PHONY : util.s
+
+# target to generate assembly for a file
+util.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/util.c.s
+.PHONY : util.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2502,6 +2529,9 @@ help:
 	@echo "... solver_algo.o"
 	@echo "... solver_algo.i"
 	@echo "... solver_algo.s"
+	@echo "... util.o"
+	@echo "... util.i"
+	@echo "... util.s"
 .PHONY : help
 
 

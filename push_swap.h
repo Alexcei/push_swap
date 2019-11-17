@@ -20,6 +20,9 @@ typedef struct      s_stacks
 	int             count_b;
 	int 			min;
 	int 			max;
+	//int 			next;
+	//int 			up;
+	//int 			back;
 	int 			flag_v;
 	int 			flag_c;
 }                   t_stacks;
@@ -37,5 +40,7 @@ void	solver_algo(t_stacks stacks);
 int 	check_solve(t_stacks stacks);
 void	ft_print_stacks(t_stacks stacks);
 void	solver_for_3(t_stacks *stacks);
+
+void	ft_free_arr(char **arr);
 
 #endif

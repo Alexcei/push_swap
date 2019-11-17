@@ -67,6 +67,7 @@ int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
 		while (arr[j++])
 			n++;
 		i++;
+		ft_free_arr(arr);
 	}
 	*ac = n;
 	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
@@ -79,6 +80,7 @@ int     *creat_stack_a(int *ac, char **av, t_stacks *stacks)
 		while (arr[j])
 			stack_a[n++] = ft_atoi_swap(arr[j++], stacks);
 		i++;
+		ft_free_arr(arr);
 	}
 	return (stack_a);
 }
@@ -195,6 +197,7 @@ int		next_command(t_stacks *stacks)
 			stacks->flag_c ? ft_printf(MAG"Last operation %s\n"RESET, line)
 						   : ft_printf("Last operation %s\n", line);;
 		apply_command(stacks, line);
+		free(line);
 		if (stacks->flag_v)
 			ft_print_stacks(*stacks);
 	}
@@ -220,6 +223,12 @@ void	pars_flag(char ***av, t_stacks *stacks)
 	}
 }
 
+void	free_all(t_stacks *stacks)
+{
+	free(stacks->stack_a);
+	free(stacks->stack_b);
+}
+
 int     main(int ac, char **av)
 {
 	t_stacks	stacks;
@@ -236,5 +245,6 @@ int     main(int ac, char **av)
 		stacks.flag_c ? ft_printf(GRN"OK\n"RESET) : ft_printf("OK\n");
 	else
 		stacks.flag_c ? ft_printf(RED"KO\n"RESET) : ft_printf("KO\n");
+	free_all(&stacks);
 	return 0;
 }

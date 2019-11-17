@@ -243,3 +243,8 @@ CMakeFiles/push_swap.dir/solver_algo.c.o: ../ft_printf/libft/libft.h
 CMakeFiles/push_swap.dir/solver_algo.c.o: ../push_swap.h
 CMakeFiles/push_swap.dir/solver_algo.c.o: ../solver_algo.c
 
+CMakeFiles/push_swap.dir/util.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/push_swap.dir/util.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/push_swap.dir/util.c.o: ../push_swap.h
+CMakeFiles/push_swap.dir/util.c.o: ../util.c
+
