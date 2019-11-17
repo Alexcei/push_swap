@@ -1058,18 +1058,31 @@ CMakeFiles/push_swap.dir/ft_printf/parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/ft_printf/parser.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bpole/CLionProjects/push_swap/ft_printf/parser.c -o CMakeFiles/push_swap.dir/ft_printf/parser.c.s
 
-CMakeFiles/push_swap.dir/main.c.o: CMakeFiles/push_swap.dir/flags.make
-CMakeFiles/push_swap.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/push_swap.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/main.c.o   -c /Users/bpole/CLionProjects/push_swap/main.c
+CMakeFiles/push_swap.dir/push_swap.c.o: CMakeFiles/push_swap.dir/flags.make
+CMakeFiles/push_swap.dir/push_swap.c.o: ../push_swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/push_swap.dir/push_swap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/push_swap.c.o   -c /Users/bpole/CLionProjects/push_swap/push_swap.c
 
-CMakeFiles/push_swap.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push_swap.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bpole/CLionProjects/push_swap/main.c > CMakeFiles/push_swap.dir/main.c.i
+CMakeFiles/push_swap.dir/push_swap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push_swap.dir/push_swap.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bpole/CLionProjects/push_swap/push_swap.c > CMakeFiles/push_swap.dir/push_swap.c.i
 
-CMakeFiles/push_swap.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bpole/CLionProjects/push_swap/main.c -o CMakeFiles/push_swap.dir/main.c.s
+CMakeFiles/push_swap.dir/push_swap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/push_swap.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bpole/CLionProjects/push_swap/push_swap.c -o CMakeFiles/push_swap.dir/push_swap.c.s
+
+CMakeFiles/push_swap.dir/solver_algo.c.o: CMakeFiles/push_swap.dir/flags.make
+CMakeFiles/push_swap.dir/solver_algo.c.o: ../solver_algo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/push_swap.dir/solver_algo.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/solver_algo.c.o   -c /Users/bpole/CLionProjects/push_swap/solver_algo.c
+
+CMakeFiles/push_swap.dir/solver_algo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push_swap.dir/solver_algo.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bpole/CLionProjects/push_swap/solver_algo.c > CMakeFiles/push_swap.dir/solver_algo.c.i
+
+CMakeFiles/push_swap.dir/solver_algo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/solver_algo.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bpole/CLionProjects/push_swap/solver_algo.c -o CMakeFiles/push_swap.dir/solver_algo.c.s
 
 # Object files for target push_swap
 push_swap_OBJECTS = \
@@ -1150,7 +1163,8 @@ push_swap_OBJECTS = \
 "CMakeFiles/push_swap.dir/ft_printf/output_u.c.o" \
 "CMakeFiles/push_swap.dir/ft_printf/output_x.c.o" \
 "CMakeFiles/push_swap.dir/ft_printf/parser.c.o" \
-"CMakeFiles/push_swap.dir/main.c.o"
+"CMakeFiles/push_swap.dir/push_swap.c.o" \
+"CMakeFiles/push_swap.dir/solver_algo.c.o"
 
 # External object files for target push_swap
 push_swap_EXTERNAL_OBJECTS =
@@ -1232,10 +1246,11 @@ push_swap: CMakeFiles/push_swap.dir/ft_printf/output_persent.c.o
 push_swap: CMakeFiles/push_swap.dir/ft_printf/output_u.c.o
 push_swap: CMakeFiles/push_swap.dir/ft_printf/output_x.c.o
 push_swap: CMakeFiles/push_swap.dir/ft_printf/parser.c.o
-push_swap: CMakeFiles/push_swap.dir/main.c.o
+push_swap: CMakeFiles/push_swap.dir/push_swap.c.o
+push_swap: CMakeFiles/push_swap.dir/solver_algo.c.o
 push_swap: CMakeFiles/push_swap.dir/build.make
 push_swap: CMakeFiles/push_swap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Linking C executable push_swap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Linking C executable push_swap"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/push_swap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

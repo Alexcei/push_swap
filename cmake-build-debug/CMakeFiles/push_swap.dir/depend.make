@@ -233,8 +233,13 @@ CMakeFiles/push_swap.dir/ft_printf/parser.c.o: ../ft_printf/ft_printf.h
 CMakeFiles/push_swap.dir/ft_printf/parser.c.o: ../ft_printf/libft/libft.h
 CMakeFiles/push_swap.dir/ft_printf/parser.c.o: ../ft_printf/parser.c
 
-CMakeFiles/push_swap.dir/main.c.o: ../ft_printf/ft_printf.h
-CMakeFiles/push_swap.dir/main.c.o: ../ft_printf/libft/libft.h
-CMakeFiles/push_swap.dir/main.c.o: ../main.c
-CMakeFiles/push_swap.dir/main.c.o: ../push_swap.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../push_swap.c
+CMakeFiles/push_swap.dir/push_swap.c.o: ../push_swap.h
+
+CMakeFiles/push_swap.dir/solver_algo.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/push_swap.dir/solver_algo.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/push_swap.dir/solver_algo.c.o: ../push_swap.h
+CMakeFiles/push_swap.dir/solver_algo.c.o: ../solver_algo.c
 

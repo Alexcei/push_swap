@@ -2202,32 +2202,59 @@ ft_printf/parser.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/ft_printf/parser.c.s
 .PHONY : ft_printf/parser.c.s
 
-main.o: main.c.o
+push_swap.o: push_swap.c.o
 
-.PHONY : main.o
+.PHONY : push_swap.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/main.c.o
-.PHONY : main.c.o
+push_swap.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.o
+.PHONY : push_swap.c.o
 
-main.i: main.c.i
+push_swap.i: push_swap.c.i
 
-.PHONY : main.i
+.PHONY : push_swap.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/main.c.i
-.PHONY : main.c.i
+push_swap.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.i
+.PHONY : push_swap.c.i
 
-main.s: main.c.s
+push_swap.s: push_swap.c.s
 
-.PHONY : main.s
+.PHONY : push_swap.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/main.c.s
-.PHONY : main.c.s
+push_swap.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.s
+.PHONY : push_swap.c.s
+
+solver_algo.o: solver_algo.c.o
+
+.PHONY : solver_algo.o
+
+# target to build an object file
+solver_algo.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/solver_algo.c.o
+.PHONY : solver_algo.c.o
+
+solver_algo.i: solver_algo.c.i
+
+.PHONY : solver_algo.i
+
+# target to preprocess a source file
+solver_algo.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/solver_algo.c.i
+.PHONY : solver_algo.c.i
+
+solver_algo.s: solver_algo.c.s
+
+.PHONY : solver_algo.s
+
+# target to generate assembly for a file
+solver_algo.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/solver_algo.c.s
+.PHONY : solver_algo.c.s
 
 # Help Target
 help:
@@ -2469,9 +2496,12 @@ help:
 	@echo "... ft_printf/parser.o"
 	@echo "... ft_printf/parser.i"
 	@echo "... ft_printf/parser.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... push_swap.o"
+	@echo "... push_swap.i"
+	@echo "... push_swap.s"
+	@echo "... solver_algo.o"
+	@echo "... solver_algo.i"
+	@echo "... solver_algo.s"
 .PHONY : help
 
 

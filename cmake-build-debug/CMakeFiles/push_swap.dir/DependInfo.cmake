@@ -81,7 +81,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/bpole/CLionProjects/push_swap/ft_printf/output_u.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/output_u.c.o"
   "/Users/bpole/CLionProjects/push_swap/ft_printf/output_x.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/output_x.c.o"
   "/Users/bpole/CLionProjects/push_swap/ft_printf/parser.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/ft_printf/parser.c.o"
-  "/Users/bpole/CLionProjects/push_swap/main.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/main.c.o"
+  "/Users/bpole/CLionProjects/push_swap/push_swap.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/push_swap.c.o"
+  "/Users/bpole/CLionProjects/push_swap/solver_algo.c" "/Users/bpole/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/solver_algo.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

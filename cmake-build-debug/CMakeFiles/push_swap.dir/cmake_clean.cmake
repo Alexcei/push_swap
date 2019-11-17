@@ -76,7 +76,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/ft_printf/output_u.c.o"
   "CMakeFiles/push_swap.dir/ft_printf/output_x.c.o"
   "CMakeFiles/push_swap.dir/ft_printf/parser.c.o"
-  "CMakeFiles/push_swap.dir/main.c.o"
+  "CMakeFiles/push_swap.dir/push_swap.c.o"
+  "CMakeFiles/push_swap.dir/solver_algo.c.o"
   "push_swap.pdb"
   "push_swap"
 )

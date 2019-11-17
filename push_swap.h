@@ -11,9 +11,6 @@
 # define MAG	"\x1B[35m"
 # define WHT	"\x1B[37m"
 # define RESET	"\x1B[0m"
-# define CLR "\e[1;1H\e[?25l"
-
-# define KO ft_putendl_fd("KO", 2);
 
 typedef struct      s_stacks
 {
@@ -21,6 +18,8 @@ typedef struct      s_stacks
 	int             *stack_b;
 	int             count_a;
 	int             count_b;
+	int 			min;
+	int 			max;
 	int 			flag_v;
 	int 			flag_c;
 }                   t_stacks;
@@ -33,5 +32,10 @@ void	ft_do_rrb(t_stacks *stacks);
 void	ft_do_rb(t_stacks *stacks);
 void	ft_do_pb(t_stacks *stacks);
 void	ft_do_pa(t_stacks *stacks);
+
+void	solver_algo(t_stacks stacks);
+int 	check_solve(t_stacks stacks);
+void	ft_print_stacks(t_stacks stacks);
+void	solver_for_3(t_stacks *stacks);
 
 #endif

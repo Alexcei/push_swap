@@ -317,10 +317,13 @@
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/ft_printf/parser.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/bpole/CLionProjects/push_swap/main.c">
+		<Unit filename="/Users/bpole/CLionProjects/push_swap/push_swap.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/push_swap.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/bpole/CLionProjects/push_swap/solver_algo.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/bpole/CLionProjects/push_swap/CMakeLists.txt">
