@@ -12,6 +12,8 @@
 # define WHT	"\x1B[37m"
 # define RESET	"\x1B[0m"
 
+# define MIN(X, Y) ((X) < (Y) ? (X) : (Y))
+
 typedef struct      s_stacks
 {
 	int             *stack_a;
@@ -26,6 +28,17 @@ typedef struct      s_stacks
 	int 			flag_v;
 	int 			flag_c;
 }                   t_stacks;
+
+typedef struct      s_com
+{
+	int             ra;
+	int             rra;
+	int             rb;
+	int             rrb;
+	int 			rr;
+	int 			rrr;
+	int 			count;
+}                   t_com;
 
 void	ft_do_sa(t_stacks *stacks);
 void	ft_do_sb(t_stacks *stacks);

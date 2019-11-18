@@ -128,6 +128,7 @@ void	ft_print_stacks(t_stacks stacks)
 			stacks.flag_c ? ft_printf(YEL"%d "RESET, *stacks.stack_a++) :
 			ft_printf("%d ", *stacks.stack_a++);
 	}
+	//ft_printf(" min - %d, max - %d\n", stacks.min, stacks.max);
 	ft_printf("\n");
 
 	stacks.flag_c ? ft_printf(BLU"STACK B %d elem - "RESET, stacks.count_b) :
