@@ -21,6 +21,7 @@ void	separate(t_stacks *stacks)
 	int 	i;
 	int 	value;
 	int 	count_a;
+	int 	tmp;
 
 	i = 0;
 	count_a = 2;
@@ -34,13 +35,19 @@ void	separate(t_stacks *stacks)
 			stacks->max = stacks->stack_a[i];
 		i++;
 	}
+	tmp = stacks->min;
 	value = stacks->min;
 	while (stacks->count_a > count_a)
 	{
 		if (stacks->stack_a[0] == stacks->min || stacks->stack_a[0] == stacks->max)
 		{
 			if (stacks->stack_a[0] == stacks->max)
+			{
+				tmp = value;
 				value = stacks->max;
+			}
+			if (stacks->stack_a[0] == stacks->min)
+				value = tmp;
 			ft_do_ra(stacks);
 			stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");
 		}
@@ -54,15 +61,16 @@ void	separate(t_stacks *stacks)
 				stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");
 				continue ;
 			}
-			if (stacks->stack_a[1] != stacks->min && stacks->stack_a[1] != stacks->max && stacks->stack_a[0] < stacks->stack_a[1])
+			/*if (stacks->stack_a[1] != stacks->min && stacks->stack_a[1] != stacks->max && stacks->stack_a[0] < stacks->stack_a[1])
 			{
 				if (stacks->count_b > 1 && stacks->stack_b[0] > stacks->stack_a[1])
 				{
 					ft_do_sa(stacks);
 					ft_do_sb(stacks);
 					stacks->flag_c ? ft_printf(CYN"ss\n"RESET) : ft_printf("ss\n");
+					continue ;
 				}
-			}
+			}*/
 			ft_do_pb(stacks);
 			stacks->flag_c ? ft_printf(CYN"pb\n"RESET) : ft_printf("pb\n");
 		}
