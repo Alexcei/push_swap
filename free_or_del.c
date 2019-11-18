@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fprintf.c                                       :+:      :+:    :+:   */
+/*   free_or_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpole <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 22:36:48 by bpole             #+#    #+#             */
-/*   Updated: 2019/11/18 22:37:05 by bpole            ###   ########.fr       */
+/*   Created: 2019/11/18 22:24:54 by bpole             #+#    #+#             */
+/*   Updated: 2019/11/18 22:25:22 by bpole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
-int			ft_fprintf(int fd, const char *format, ...)
+void		ft_free_arr_push(char **arr)
 {
-	t_box	box;
-	t_tab	tab;
+	int		i;
 
-	ft_bzero(&box, sizeof(t_box));
-	box.fd = fd;
-	box.format = format;
-	va_start(box.av, format);
-	parser(&box, &tab);
-	va_end(box.av);
-	return (box.res);
+	i = 0;
+	while (arr[i])
+		ft_strdel(&arr[i++]);
+	free(arr);
+}
+
+void		ft_print_error(t_stacks *stacks)
+{
+	stacks->flag_c ? ft_printf(RED"Error\n"RESET) : ft_printf("Error\n");
+	exit(1);
 }

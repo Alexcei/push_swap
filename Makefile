@@ -6,7 +6,7 @@
 #    By: bpole <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/11 10:08:31 by bpole             #+#    #+#              #
-#    Updated: 2019/11/17 16:17:55 by bpole            ###   ########.fr        #
+#    Updated: 2019/11/18 21:46:19 by bpole            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,11 @@ NAME_P = push_swap
 LIB_DIR = ./ft_printf/
 LIBFT = $(LIB_DIR)libftprintf.a
 
-SRC_C = ./checker.c ./commands.c ./util.c
-SRC_P = ./push_swap.c ./commands.c ./solver_algo.c ./util.c
+SRC_C = ./checker.c ./commands.c ./util.c ./commands_next.c \
+        ./creat_stack.c ./free_or_del.c
+SRC_P = ./push_swap.c ./commands.c ./solver_algo.c ./util.c \
+        ./get_commands.c ./commands_next.c ./do_commands.c \
+        ./creat_stack.c ./separate.c ./free_or_del.c
 
 OBJ_C = $(SRC_C:.c=.o)
 OBJ_P = $(SRC_P:.c=.o)
