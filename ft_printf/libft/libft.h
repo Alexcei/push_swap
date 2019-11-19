@@ -6,14 +6,14 @@
 /*   By: bpole <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 12:09:58 by bpole             #+#    #+#             */
-/*   Updated: 2019/09/26 17:23:56 by bpole            ###   ########.fr       */
+/*   Updated: 2019/11/19 22:25:06 by bpole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFF_SIZE 5000
+# define BUFF_SIZE 500
 
 # include <string.h>
 # include <stdlib.h>

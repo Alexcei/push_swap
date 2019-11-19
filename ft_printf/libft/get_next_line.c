@@ -6,7 +6,7 @@
 /*   By: bpole <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 20:06:15 by bpole             #+#    #+#             */
-/*   Updated: 2019/11/16 13:32:47 by bpole            ###   ########.fr       */
+/*   Updated: 2019/11/19 22:24:56 by bpole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int			ft_pars(char **line, int fd, char **res, int bites)
 		i++;
 	if ((*res)[i] == '\0')
 	{
-		if (bites == BUFF_SIZE)
+		if (bites > 0)
 			return (get_next_line(fd, line));
 		*line = *res;
 		*res = NULL;
