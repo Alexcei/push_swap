@@ -6,7 +6,7 @@
 /*   By: bpole <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 21:47:12 by bpole             #+#    #+#             */
-/*   Updated: 2019/11/18 21:50:08 by bpole            ###   ########.fr       */
+/*   Updated: 2019/11/20 01:48:19 by bpole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ static void		apply_command(t_stacks *stacks, char *line)
 		apply_command_next(stacks, line);
 }
 
-static int		next_command(t_stacks *stacks)
+static int		next_command(t_stacks *stacks, int fd)
 {
 	char		*line;
 
-	while (get_next_line(0, &line) > 0)
+	while (get_next_line(fd, &line) > 0)
 	{
 		if (stacks->flag_v)
 			stacks->flag_c ? ft_printf(MAG"Last operation %s\n"RESET, line)
@@ -77,16 +77,22 @@ static int		next_command(t_stacks *stacks)
 int				main(int ac, char **av)
 {
 	t_stacks	stacks;
+	int			fd;
 
 	av++;
 	ft_bzero(&stacks, sizeof(t_stacks));
 	ft_pars_flags(&av, &stacks);
 	if (ac == 1)
 		return (0);
+	fd = open(av[0], O_RDONLY);
+	if (fd == -1)
+		fd = 0;
+	else
+		av++;
 	ft_creat_stacks(&stacks, ac - 1, av);
 	if (stacks.flag_v)
 		ft_print_stacks(stacks);
-	if (next_command(&stacks))
+	if (next_command(&stacks, fd))
 		stacks.flag_c ? ft_printf(GRN"OK\n"RESET) : ft_printf("OK\n");
 	else
 		stacks.flag_c ? ft_printf(RED"KO\n"RESET) : ft_printf("KO\n");
